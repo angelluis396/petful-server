@@ -28,8 +28,8 @@ catRouter
   .get((req, res, next) => {
     if(!catsQ.first) {
       reload();
+      res.json(catsQ.first.next);
     }
-    return res.status(200).json({});
   });
 
   catRouter
