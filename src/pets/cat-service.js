@@ -5,7 +5,7 @@ let catsQ = new Queue();
 
 const fillCatQ = catArr => {
   for  (let i = 0; i < catArr.length; i++) {
-    catsQ.enqueue(catsQ[i]);
+    catsQ.enqueue(catsArr[i]);
   }
   return catsQ;
 };

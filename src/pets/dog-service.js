@@ -5,7 +5,7 @@ let dogsQ = new Queue();
 
 const fillDogQ = dogArr => {
   for  (let i = 0; i < dogArr.length; i++) {
-    dogsQ.enqueue(dogsQ[i]);
+    dogsQ.enqueue(dogsArr[i]);
   }
   return dogsQ;
 };
