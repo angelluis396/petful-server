@@ -2,21 +2,18 @@ require('dotenv').config();
 
 const express = require('express');
 const cors = require('cors');
-const {PORT, CLIENT_ORIGIN} = require('./config');
-const dogRouter = require('./pets/dog-router');
-const catRouter = require('./pets/cat-router');
-
+const {PORT} = require('./config');
+const dogRouter = require('./dogs/dog-router');
+const catRouter = require('./cats/cat-router');
+const adoptersRouter = require('./adopters/adopters-router');
 
 const app = express();
 
-app.use(
-  cors({
-    origin: CLIENT_ORIGIN
-  })
-);
+app.use(cors());
 
 app.use('/api/dogs', dogRouter);
 app.use('/api/cats', catRouter);
+app.use('/api/adopters', adoptersRouter);
 
 //catches all 404 errors
 app.use(function(req, res, next) {
