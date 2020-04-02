@@ -31,7 +31,7 @@ class Queue {
     }
 
     const node = this.first;
-    this.first = this.first.next;
+    this.first = node.next;
 
     if (node === this.last) {
       this.last = null;
