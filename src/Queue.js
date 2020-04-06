@@ -13,15 +13,12 @@ class Queue {
 
   enqueue(value) {
     const node = new _Node(value);
-
     if (this.first === null) {
       this.first = node;
     }
-
     if (this.last) {
       this.last.next = node;
     }
-
     this.last = node;
   }
 
@@ -29,7 +26,6 @@ class Queue {
     if (this.first === null) {
       return;
     }
-
     const node = this.first;
     this.first = node.next;
 
