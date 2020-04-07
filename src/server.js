@@ -1,7 +1,6 @@
 require('dotenv').config();
 
 const express = require('express');
-const morgan = require('morgan');
 const cors = require('cors');
 const {PORT, CLIENT_ORIGIN} = require('./config');
 const dogRouter = require('./dogs/dog-router');
@@ -13,7 +12,7 @@ const app = express();
 app.use(cors({
   origin: CLIENT_ORIGIN
 }));
-app.use(morgan(morganSetting))
+
 
 app.use('/api/dogs', dogRouter);
 app.use('/api/cats', catRouter);
