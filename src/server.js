@@ -9,11 +9,7 @@ const adoptersRouter = require('./adopters/adopters-router');
 
 const app = express();
 
-app.use(
-  cors({
-    origin: CLIENT_ORIGIN
-  })
-);
+app.use(cors());
 
 
 app.use('/api/dogs', dogRouter);
