@@ -1,6 +1,16 @@
-# Express Boilerplate!
+## PetFul App.
 
-This is a boilerplate project used for starting new projects!
+Created by Angel Alicea
+
+[Live App Link]()
+
+[Server Repo]()
+
+##Technology Utilized
+JavaScript, React, Linked Lists, Queue, Node, JSX, HTML, CSS
+
+## Summary
+This application uses queues and linked lists to determine who is next in line to adopt. Once you add your name to the queue you can adopt either a Cat or a Dog! 
 
 ## Set up
 

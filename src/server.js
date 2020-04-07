@@ -2,15 +2,17 @@ require('dotenv').config();
 
 const express = require('express');
 const cors = require('cors');
+const morgan = require('morgan');
 const {PORT} = require('./config');
 const dogRouter = require('./dogs/dog-router');
 const catRouter = require('./cats/cat-router');
 const adoptersRouter = require('./adopters/adopters-router');
 
 const app = express();
+const morganSetting = process.env.NODE_ENV === 'production' ? 'tiny' : 'common'
 
 app.use(cors());
-
+app.use(morgan(morganSetting))
 app.use('/api/dogs', dogRouter);
 app.use('/api/cats', catRouter);
 app.use('/api/adopters', adoptersRouter);
@@ -22,14 +24,17 @@ app.use(function(req, res, next) {
   next(err);
 });
 
-//handler to catch all errors
-app.use(function(err, req, res, next) {
-  res.status(err.status || 500);
-  res.json({
-    message: err.message,
-    error: app.get('env') === 'development' ? err : {}
-  });
-});
+
+// 4 parameters in middleware, express knows to treat this as error handler
+app.use((error, req, res, next) => {
+  let response
+  if (process.env.NODE_ENV === 'development') {
+    response = { error: { message: 'server error' }}
+  } else {
+    response = { error }
+  }
+  res.status(500).json(response)
+})
 
 app.listen(PORT, ()=> {
   console.log(`Server listening at http://localhost:${PORT}`)
