@@ -1,9 +1,9 @@
 
-const app = require('../src/app');
+const server = require('../src/server');
 
-describe('App', ()=> {
+describe('server', ()=> {
   it('GET / responds with 200 containing "Hello World!"', ()=>{
-    return supertest(app)
+    return supertest(server)
       .get('/')
       .expect(200, 'Hello boilerplate!')
   })
