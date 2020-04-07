@@ -14,7 +14,7 @@ catRouter
 });
 
 catRouter
-.delete( '/:id', (req, res, next) =>{
+.delete( '/delete', (req, res, next) =>{
   catStore.dequeue();
   return res.status(204).json(catStore.first);
 });

@@ -15,7 +15,7 @@ dogRouter
 });
 
 dogRouter
-.delete( '/:id', (req, res, next) =>{
+.delete( '/delete', (req, res, next) =>{
   dogStore.dequeue();
   return res.status(204).json(dogStore.first);
 });

@@ -6,7 +6,7 @@ adoptersRouter.get('/', (req, res, next) => {
   return res.json(adopterList);
 });
 
-adoptersRouter.delete('/', (req, res, next) => {
+adoptersRouter.delete('/delete', (req, res, next) => {
    adopterList.dequeue();
    return res.status(204).json(adopterList.first); 
 });
