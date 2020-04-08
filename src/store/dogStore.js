@@ -19,7 +19,7 @@ dogStore.enqueue({
   id: 2 ,
   imageURL:'https://vetstreet.brightspotcdn.com/dims4/default/edb51df/2147483647/crop/0x0%2B0%2B0/resize/645x380/quality/90/?url=https%3A%2F%2Fvetstreet-brightspot.s3.amazonaws.com%2F19%2F716f20a7f711e0a0d50050568d634f%2Ffile%2FPomeranian-2-645mk062811.jpg', 
   imageDescription: 'Fluffy the pomeranian.',
-  name: 'Fluffy',
+  name: 'Fluf',
   sex: 'Male',
   age: 1,
   breed: 'Pomeranian',
