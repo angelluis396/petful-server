@@ -16,8 +16,10 @@ dogRouter
 
 dogRouter
 .delete( '/delete', (req, res, next) =>{
+  const dog = dogStore.first.value;
   dogStore.dequeue();
-  return res.status(204).json(dogStore.first);
+  dogStore.enqueue(dog);
+  res.end();
 });
 
 

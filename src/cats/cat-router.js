@@ -1,13 +1,14 @@
 const express = require('express');
-const catStore = require('../store/catStore')
 const catRouter = express.Router();
+const catStore = require('../store/catStore')
+
 
 catRouter
 .get('/', (req, res, next) => {
   if(catStore.first === null)
     res
     .status(404)
-    .send('Sorry there are no cats available')
+    .send('Sorry there are no Cats available')
   else {
     return res.json(catStore.first.value)
   }
@@ -15,8 +16,10 @@ catRouter
 
 catRouter
 .delete( '/delete', (req, res, next) =>{
+  const cat = catStore.first.value;
   catStore.dequeue();
-  return res.status(204).json(catStore.first);
+  catStore.enqueue(cat);
+  res.end();
 });
 
 

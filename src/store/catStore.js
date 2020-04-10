@@ -40,7 +40,7 @@ catStore.enqueue({
 
 catStore.enqueue({
   id: 16 ,
-  imageURL:'https://d3eh3svpl1busq.cloudfront.net/mwIJloVUffDtKiCgRcivopdgojcJrVwT/assets/static/optimized/rev-dbf3d6b/image/siamese-cat-cover.jpg', 
+  imageURL:'https://www.thesprucepets.com/thmb/wCRXfV3EfWMTb15Zj41zib150fk=/960x0/filters:no_upscale():max_bytes(150000):strip_icc()/37587975_889760374551318_78404718182793216_n-5b69b5cb46e0fb00505791e1.jpg', 
   imageDescription: 'Phil the Siamese Cat.',
   name: 'Phil',
   sex: 'Male',
